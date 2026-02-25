@@ -23,7 +23,7 @@ This repository contains the analysis code for building and validating a 7-prote
 
 01_nested_cv_robustness/          # Monte Carlo robustness & noise injection (Fig 2D-N, S6)
   monte_carlo_robustness_4feature.py    # 4-feature NB robustness analysis
-  robustness_analysis_3feature.py       # 3-feature NB robustness analysis
+  monte_carlo_robustness_3feature.py    # 3-feature NB robustness analysis
   model_comparison_3vs4_features.py     # Head-to-head 3 vs 4 feature comparison
   advanced_model_analysis.py            # SHAP, DCA, ROC with confidence intervals
   generate_comparison_figures.py        # Individual metric comparison panels
@@ -71,7 +71,7 @@ See `requirements.txt` for the full list. Key dependencies: Python >= 3.9, sciki
 3. **`01_nested_cv_robustness/model_comparison_3vs4_features.py`** — generates `champion_model_NB_3features.pkl` (must run before other robustness scripts)
 4. **`01_nested_cv_robustness/`** remaining scripts (any order):
    - `monte_carlo_robustness_4feature.py` — requires 4-feature .pkl
-   - `robustness_analysis_3feature.py` — retrains 3-feature NB internally
+   - `monte_carlo_robustness_3feature.py` — retrains 3-feature NB internally
    - `advanced_model_analysis.py` — requires both .pkl files
    - `generate_comparison_figures.py` — requires both .pkl files
 5. **`02_cox_vs_ml_comparison/cox_vs_ml_comparison.py`** — requires trained model files
@@ -87,13 +87,13 @@ See `requirements.txt` for the full list. Key dependencies: Python >= 3.9, sciki
 | Fig 2D-E | `advanced_model_analysis.py` | SHAP importance, Decision Curve Analysis |
 | Fig 2F-G | `monte_carlo_robustness_4feature.py` | Feature noise injection, dropout |
 | Fig 2H-L | `model_comparison_3vs4_features.py` | 3 vs 4 feature comparison |
-| Fig 2M | `monte_carlo_robustness_4feature.py` + `robustness_analysis_3feature.py` | Permutation test overlay |
-| Fig 2N | `robustness_analysis_3feature.py` | 3-feature ablation |
+| Fig 2M | `monte_carlo_robustness_4feature.py` + `monte_carlo_robustness_3feature.py` | Permutation test overlay |
+| Fig 2N | `monte_carlo_robustness_3feature.py` | 3-feature ablation |
 | Fig 4A-G | `cox_vs_ml_comparison.py` | Cox vs ML bootstrap CV comparison |
 | Fig 4H-R | `ensemble_nb3_cox_comparison.py` | Ensemble strategy evaluation |
 | Fig 4P-Q | `ensemble_monte_carlo_robustness_cv.py` | Ensemble noise + permutation test |
 | Fig S4E-I | `create_transferability_figures.py` | Endpoint transferability |
-| Fig S6A-E | `monte_carlo_robustness_4feature.py` + `robustness_analysis_3feature.py` | Extended robustness |
+| Fig S6A-E | `monte_carlo_robustness_4feature.py` + `monte_carlo_robustness_3feature.py` | Extended robustness |
 | Fig S7G-H | `ensemble_monte_carlo_robustness.py` | Ensemble noise sensitivity |
 
 ## License

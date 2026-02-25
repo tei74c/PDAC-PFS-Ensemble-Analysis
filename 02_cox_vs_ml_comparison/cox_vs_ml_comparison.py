@@ -967,10 +967,7 @@ def percentile_ci(data: np.ndarray, ci_level: float = 0.95) -> Tuple[float, floa
     """
     Compute percentile confidence interval directly from bootstrap distribution.
 
-    When you already have bootstrap samples (e.g., 200 performance metrics from
-    bootstrap CV), the distribution IS the bootstrap distribution. No secondary
-    bootstrap is needed; just take percentiles directly.
-
+   
     Args:
         data: Array of bootstrap samples (e.g., 200 F1 scores from bootstrap CV)
         ci_level: Confidence level (default 0.95 for 95% CI)
