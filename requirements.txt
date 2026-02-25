@@ -8,3 +8,16 @@ lifelines>=0.27
 shap>=0.42
 openpyxl>=3.1
 tqdm>=4.65
+
+# R packages for WGCNA pipeline (06_wgcna/wgcna_Nika_final.R)
+# Requires R >= 4.x. Install via:
+#
+# CRAN:
+#   install.packages(c("WGCNA", "tidyverse", "openxlsx", "pheatmap", "ggrepel",
+#                       "scales", "RColorBrewer", "patchwork", "igraph", "circlize",
+#                       "ggalluvial", "ggvenn", "cowplot", "ggh4x", "ggwordcloud",
+#                       "ggdendro", "ggforce", "viridis", "paletteer", "tidytext",
+#                       "umap", "reshape2", "conflicted"))
+#
+# Bioconductor:
+#   BiocManager::install(c("GSVA", "msigdbr", "fgsea", "STRINGdb"))
