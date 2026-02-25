@@ -42,7 +42,7 @@ This repository contains the analysis code for building and validating a 7-prote
 05_nested_cv_pipeline/            # Nested CV feature selection & model training (Fig 2A-C, S5)
   nested_cv_pipeline.ipynb            # Full pipeline (USE_ELASTIC_NET tunable for mode selection)
 
-06_wgcna/                         # WGCNA co-expression network analysis (Fig 5, S8-S10)
+06_wgcna/                         # WGCNA co-expression network analysis (Fig 5-6, S8-S9)
   wgcna_Nika_final.R                  # Full pipeline: network construction, module detection,
                                       #   hub genes, pathway enrichment, clinical associations (R 4.x)
 ```
@@ -69,6 +69,16 @@ pip install -r requirements.txt
 ```
 
 See `requirements.txt` for the full list. Key dependencies: Python >= 3.9, scikit-learn >= 1.3, lifelines >= 0.27, shap >= 0.42.
+
+For the WGCNA pipeline (R 4.x):
+
+```r
+install.packages(c("WGCNA", "tidyverse", "openxlsx", "pheatmap", "ggrepel", "scales",
+                    "RColorBrewer", "patchwork", "igraph", "circlize", "ggalluvial",
+                    "ggvenn", "cowplot", "ggh4x", "ggwordcloud", "ggdendro", "ggforce",
+                    "viridis", "paletteer", "tidytext", "umap", "reshape2", "conflicted"))
+BiocManager::install(c("GSVA", "msigdbr", "fgsea", "STRINGdb"))
+```
 
 ## Execution Order
 
@@ -102,6 +112,10 @@ See `requirements.txt` for the full list. Key dependencies: Python >= 3.9, sciki
 | Fig S4E-I | `create_transferability_figures.py` | Endpoint transferability |
 | Fig S6A-E | `monte_carlo_robustness_4feature.py` + `monte_carlo_robustness_3feature.py` | Extended robustness |
 | Fig S7G-H | `ensemble_monte_carlo_robustness.py` | Ensemble noise sensitivity |
+| Fig 5A-E | `wgcna_Nika_final.R` | Patient/protein dendrograms, module-trait correlations, network topology, pathway enrichment |
+| Fig 6A-C | `wgcna_Nika_final.R` | Biomarker module membership, sEV detection, biological architecture |
+| Fig S8A-I | `wgcna_Nika_final.R` | Scale-free topology, module detection, bootstrap stability, hub gene co-clustering |
+| Fig S9A-C | `wgcna_Nika_final.R` | Module preservation (Zsummary), permutation null distributions, plasma-sEV overlap |
 
 ## License
 
