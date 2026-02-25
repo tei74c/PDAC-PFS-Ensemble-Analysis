@@ -66,12 +66,17 @@ See `requirements.txt` for the full list. Key dependencies: Python >= 3.9, sciki
 
 ## Execution Order
 
-1. **`05_nested_cv_pipeline/`** (feature selection + model training, generates champion NB pickle)
-2. **`00_cox_regression/`** (Cox PH pipeline, generates risk groups)
-3. **`01_nested_cv_robustness/`** scripts (independent, any order)
-4. **`02_cox_vs_ml_comparison/`** (requires trained model files)
-5. **`03_ensemble_model/ensemble_nb3_cox_comparison.py`** first, then robustness scripts
-6. **`04_transferability/`** (independent)
+1. **`05_nested_cv_pipeline/nested_cv_pipeline.ipynb`** — generates `champion_model_NB_4features.pkl`
+2. **`00_cox_regression/cox_regression_pipeline.ipynb`** — Cox PH pipeline, generates risk groups
+3. **`01_nested_cv_robustness/model_comparison_3vs4_features.py`** — generates `champion_model_NB_3features.pkl` (must run before other robustness scripts)
+4. **`01_nested_cv_robustness/`** remaining scripts (any order):
+   - `monte_carlo_robustness_4feature.py` — requires 4-feature .pkl
+   - `robustness_analysis_3feature.py` — retrains 3-feature NB internally
+   - `advanced_model_analysis.py` — requires both .pkl files
+   - `generate_comparison_figures.py` — requires both .pkl files
+5. **`02_cox_vs_ml_comparison/cox_vs_ml_comparison.py`** — requires trained model files
+6. **`03_ensemble_model/ensemble_nb3_cox_comparison.py`** first, then robustness scripts
+7. **`04_transferability/create_transferability_figures.py`** — independent
 
 ## Figure Mapping
 
