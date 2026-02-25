@@ -19,7 +19,7 @@ This repository contains the analysis code for building and validating a 7-prote
 
 ```
 00_cox_regression/                # Cox PH regression pipeline (Fig 3A-F, S3)
-  cox_regression_pipeline.ipynb       # Univariate/multivariate Cox, QC, risk stratification
+  cox_regression_pipeline.ipynb       # Univariate/multivariate Cox, QC, risk stratification (designed for Google Colab)
 
 01_nested_cv_robustness/          # Monte Carlo robustness & noise injection (Fig 2D-N, S6)
   monte_carlo_robustness_4feature.py    # 4-feature NB robustness analysis
