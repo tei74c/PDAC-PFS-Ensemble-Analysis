@@ -91,19 +91,6 @@ See `requirements.txt` for the full list. Key dependencies: Python >= 3.9, sciki
 | Fig S6A-E | `monte_carlo_robustness_4feature.py` + `robustness_analysis_3feature.py` | Extended robustness |
 | Fig S7G-H | `ensemble_monte_carlo_robustness.py` | Ensemble noise sensitivity |
 
-## Statistical Notes
-
-All permutation tests use the Phipson-Smyth corrected p-value formula:
-
-```
-p = (r + 1) / (n + 1)
-```
-
-where r = number of permutation statistics >= observed, n = total permutations.
-This prevents degenerate p = 0 from finite permutation samples.
-
-Reference: Phipson B & Smyth GK (2010). *Stat Appl Genet Mol Biol* 9:Article39.
-
 ## License
 
 This code is provided for academic and research purposes accompanying the manuscript.
