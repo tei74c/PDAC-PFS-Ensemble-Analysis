@@ -41,6 +41,10 @@ This repository contains the analysis code for building and validating a 7-prote
 
 05_nested_cv_pipeline/            # Nested CV feature selection & model training (Fig 2A-C, S5)
   nested_cv_pipeline.ipynb            # Full pipeline (USE_ELASTIC_NET tunable for mode selection)
+
+06_wgcna/                         # WGCNA co-expression network analysis (Fig 5, S8-S10)
+  wgcna_Nika_final.R                  # Full pipeline: network construction, module detection,
+                                      #   hub genes, pathway enrichment, clinical associations (R 4.x)
 ```
 
 ## Data Availability
@@ -55,6 +59,8 @@ Input data files are not included in this repository and are available upon reas
 | `PFS_ML_train_cof_wo_IG.xlsx` | Training set (n=34) |
 | `PFS_ML_test_cof_wo_IG.xlsx` | Holdout test set (n=16) |
 | `COMPREHENSIVE_RESULTS.xlsx` | Transferability analysis results |
+| `correctedHLA_Rawdata_PFSfiltered.csv` | Expression + clinical data for WGCNA (891 proteins x 50 samples) |
+| `mastertable_Signature.csv` | Gene signature database (150 PDAC-specific signatures) |
 
 ## Requirements
 
@@ -77,6 +83,7 @@ See `requirements.txt` for the full list. Key dependencies: Python >= 3.9, sciki
 5. **`02_cox_vs_ml_comparison/cox_vs_ml_comparison.py`** — requires trained model files
 6. **`03_ensemble_model/ensemble_nb3_cox_comparison.py`** first, then robustness scripts
 7. **`04_transferability/create_transferability_figures.py`** — independent
+8. **`06_wgcna/wgcna_Nika_final.R`** — independent (requires R 4.x with WGCNA, tidyverse, GSVA)
 
 ## Figure Mapping
 
