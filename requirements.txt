@@ -6,10 +6,11 @@ matplotlib>=3.7
 seaborn>=0.12
 lifelines>=0.27
 shap>=0.42
+statsmodels>=0.14
 openpyxl>=3.1
 tqdm>=4.65
 
-# R packages for WGCNA pipeline (06_wgcna/wgcna_Nika_final.R)
+# R packages for WGCNA pipeline (06_wgcna/WGCNA_pipeline.R)
 # Requires R >= 4.x. Install via:
 #
 # CRAN:

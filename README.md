@@ -43,8 +43,11 @@ This repository contains the analysis code for building and validating a 7-prote
   nested_cv_pipeline.ipynb            # Full pipeline (USE_ELASTIC_NET tunable for mode selection)
 
 06_wgcna/                         # WGCNA co-expression network analysis (Fig 5-6, S8-S9)
-  wgcna_Nika_final.R                  # Full pipeline: network construction, module detection,
+  WGCNA_pipeline.R                    # Full pipeline: network construction, module detection,
                                       #   hub genes, pathway enrichment, clinical associations (R 4.x)
+
+07_os_transferability/            # OS endpoint transferability (Fig S4J-R)
+  os_transferability_correlations.py  # PFS-trained signature correlation with OS
 ```
 
 ## Data Availability
@@ -59,6 +62,7 @@ Input data files are not included in this repository and are available upon reas
 | `PFS_ML_train_cof_wo_IG.xlsx` | Training set (n=34) |
 | `PFS_ML_test_cof_wo_IG.xlsx` | Holdout test set (n=16) |
 | `COMPREHENSIVE_RESULTS.xlsx` | Transferability analysis results |
+| `FinalwinnerML_Cox_dataset_OS.xlsx` | OS-labelled feature matrix (33 patients with available OS) |
 | `correctedHLA_Rawdata_PFSfiltered.csv` | Expression + clinical data for WGCNA (891 proteins x 50 samples) |
 | `mastertable_Signature.csv` | Gene signature database (150 PDAC-specific signatures) |
 
@@ -93,7 +97,8 @@ BiocManager::install(c("GSVA", "msigdbr", "fgsea", "STRINGdb"))
 5. **`02_cox_vs_ml_comparison/cox_vs_ml_comparison.py`** — requires trained model files
 6. **`03_ensemble_model/ensemble_nb3_cox_comparison.py`** first, then robustness scripts
 7. **`04_transferability/create_transferability_figures.py`** — independent
-8. **`06_wgcna/wgcna_Nika_final.R`** — independent (requires R 4.x with WGCNA, tidyverse, GSVA)
+8. **`07_os_transferability/os_transferability_correlations.py`** — independent (requires `FinalwinnerML_Cox_dataset_OS.xlsx` + `FinalwinnerML_Cox_dataset.xlsx`)
+9. **`06_wgcna/WGCNA_pipeline.R`** — independent (requires R 4.x with WGCNA, tidyverse, GSVA)
 
 ## Figure Mapping
 
@@ -110,12 +115,13 @@ BiocManager::install(c("GSVA", "msigdbr", "fgsea", "STRINGdb"))
 | Fig 4H-R | `ensemble_nb3_cox_comparison.py` | Ensemble strategy evaluation |
 | Fig 4P-Q | `ensemble_monte_carlo_robustness_cv.py` | Ensemble noise + permutation test |
 | Fig S4E-I | `create_transferability_figures.py` | Endpoint transferability |
+| Fig S4J-R | `os_transferability_correlations.py` | PFS-trained signature correlation with OS |
 | Fig S6A-E | `monte_carlo_robustness_4feature.py` + `monte_carlo_robustness_3feature.py` | Extended robustness |
 | Fig S7G-H | `ensemble_monte_carlo_robustness.py` | Ensemble noise sensitivity |
-| Fig 5A-E | `wgcna_Nika_final.R` | Patient/protein dendrograms, module-trait correlations, network topology, pathway enrichment |
-| Fig 6A-C | `wgcna_Nika_final.R` | Biomarker module membership, sEV detection, biological architecture |
-| Fig S8A-I | `wgcna_Nika_final.R` | Scale-free topology, module detection, bootstrap stability, hub gene co-clustering |
-| Fig S9A-C | `wgcna_Nika_final.R` | Module preservation (Zsummary), permutation null distributions, plasma-sEV overlap |
+| Fig 5A-E | `WGCNA_pipeline.R` | Patient/protein dendrograms, module-trait correlations, network topology, pathway enrichment |
+| Fig 6A-C | `WGCNA_pipeline.R` | Biomarker module membership, sEV detection, biological architecture |
+| Fig S8A-I | `WGCNA_pipeline.R` | Scale-free topology, module detection, bootstrap stability, hub gene co-clustering |
+| Fig S9A-C | `WGCNA_pipeline.R` | Module preservation (Zsummary), permutation null distributions, plasma-sEV overlap |
 
 ## License
 
