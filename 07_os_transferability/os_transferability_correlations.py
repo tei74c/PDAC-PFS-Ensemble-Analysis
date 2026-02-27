@@ -146,7 +146,7 @@ print(f"NB prob range: {df['NB_prob'].min():.3f} - {df['NB_prob'].max():.3f}")
 print(f"Ensemble prob range: {df['Ens_prob'].min():.3f} - {df['Ens_prob'].max():.3f}")
 
 # ============================================================================
-# FIGURE: Multi-panel correlation overview (3x3 grid, Fig S9)
+# FIGURE: Multi-panel correlation overview (3x3 grid, Fig S8)
 # ============================================================================
 print("\n[1] Multi-panel correlation figure...")
 

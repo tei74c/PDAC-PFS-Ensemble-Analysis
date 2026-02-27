@@ -42,11 +42,11 @@ This repository contains the analysis code for building and validating a 7-prote
 05_nested_cv_pipeline/            # Nested CV feature selection & model training (Fig 2A-C, S5)
   nested_cv_pipeline.ipynb            # Full pipeline (USE_ELASTIC_NET tunable for mode selection)
 
-06_wgcna/                         # WGCNA co-expression network analysis (Fig 5-6, S8, S10)
+06_wgcna/                         # WGCNA co-expression network analysis (Fig 5-6, S9-S10)
   WGCNA_pipeline.R                    # Full pipeline: network construction, module detection,
                                       #   hub genes, pathway enrichment, clinical associations (R 4.x)
 
-07_os_transferability/            # OS endpoint transferability (Fig S9A-I)
+07_os_transferability/            # OS endpoint transferability (Fig S8A-I)
   os_transferability_correlations.py  # PFS-trained signature correlation with OS
 ```
 
@@ -115,12 +115,12 @@ BiocManager::install(c("GSVA", "msigdbr", "fgsea", "STRINGdb"))
 | Fig 4H-R | `ensemble_nb3_cox_comparison.py` | Ensemble strategy evaluation |
 | Fig 4P-Q | `ensemble_monte_carlo_robustness_cv.py` | Ensemble noise + permutation test |
 | Fig S4E-I | `create_transferability_figures.py` | Endpoint transferability |
-| Fig S9A-I | `os_transferability_correlations.py` | PFS-trained signature correlation with OS |
+| Fig S8A-I | `os_transferability_correlations.py` | PFS-trained signature correlation with OS |
 | Fig S6A-E | `monte_carlo_robustness_4feature.py` + `monte_carlo_robustness_3feature.py` | Extended robustness |
 | Fig S7G-H | `ensemble_monte_carlo_robustness.py` | Ensemble noise sensitivity |
 | Fig 5A-E | `WGCNA_pipeline.R` | Patient/protein dendrograms, module-trait correlations, network topology, pathway enrichment |
 | Fig 6A-C | `WGCNA_pipeline.R` | Biomarker module membership, sEV detection, biological architecture |
-| Fig S8A-I | `WGCNA_pipeline.R` | Scale-free topology, module detection, bootstrap stability, hub gene co-clustering |
+| Fig S9A-I | `WGCNA_pipeline.R` | Scale-free topology, module detection, bootstrap stability, hub gene co-clustering |
 | Fig S10A-C | `WGCNA_pipeline.R` | Module preservation (Zsummary), permutation null distributions, plasma-sEV overlap |
 
 ## License
